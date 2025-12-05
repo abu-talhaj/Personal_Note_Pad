@@ -75,16 +75,23 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
         return Center(
           child: SingleChildScrollView(
             child: AlertDialog(
+              backgroundColor: Colors.purple,
               content: Column(
                 children: [
                   TextField(
                     controller: titleClt,
-                    decoration: InputDecoration(hintText: 'Your Title Text'),
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      hintText: 'Your Title Text',
+                      hintStyle: TextStyle(color: Colors.white),
+                    ),
                   ),
                   TextField(
                     controller: cntentClt,
+                    style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintText: 'Enter your description Text ',
+                      hintStyle: TextStyle(color: Colors.white),
                     ),
                   ),
                 ],

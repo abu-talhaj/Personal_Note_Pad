@@ -14,19 +14,12 @@ class NoteScreen extends StatelessWidget {
   final TextEditingController titleClt = TextEditingController();
   final TextEditingController cntentClt = TextEditingController();
 
-  // final Box box = Hive.box("notes");
   final Box<NoteModel> box = Hive.box<NoteModel>("notes");
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: InkWell(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(Icons.arrow_back),
-        ),
         backgroundColor: Colors.purpleAccent,
         title: Center(
           child: Text(
@@ -49,7 +42,6 @@ class NoteScreen extends StatelessWidget {
                       ),
                     )
                   : ListView.separated(
-                      // itemCount: box.length,
                       itemCount: box.keys.length,
                       separatorBuilder: (context, index) {
                         return Divider(
@@ -66,10 +58,17 @@ class NoteScreen extends StatelessWidget {
                         return ListTile(
                           leading: CircleAvatar(
                             backgroundColor: Colors.purple,
-                            child: Text((index + 1).toString()),
+                            child: Text(
+                              (index + 1).toString(),
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
-                          title: Text(note.title.toString()),
-                          subtitle: Text(note.Content.toString()),
+                          title: Text(note.title.toString(), maxLines: 1),
+                          subtitle: Text(
+                            note.Content.toString(),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
                           trailing: SizedBox(
                             width: 60.0,
                             child: Row(
@@ -113,15 +112,24 @@ class NoteScreen extends StatelessWidget {
         return Center(
           child: SingleChildScrollView(
             child: AlertDialog(
+              backgroundColor: Colors.purple,
               content: Column(
                 children: [
                   TextField(
                     controller: titleClt,
-                    decoration: InputDecoration(hintText: 'Title name'),
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      hintText: 'Title name',
+                      hintStyle: TextStyle(color: Colors.white),
+                    ),
                   ),
                   TextField(
                     controller: cntentClt,
-                    decoration: InputDecoration(hintText: ' Description'),
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      hintText: ' Description',
+                      hintStyle: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ],
               ),

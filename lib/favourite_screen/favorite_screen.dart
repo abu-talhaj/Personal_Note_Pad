@@ -8,24 +8,16 @@ class FavoriteScreen extends StatelessWidget {
   FavoriteScreen({super.key});
 
   final FavouriteController favController = Get.find<FavouriteController>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: InkWell(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(Icons.arrow_back),
-        ),
         backgroundColor: Colors.purpleAccent,
-        title: Center(
-          child: Text(
-            "favorites",
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-          ),
+        title: Text(
+          "Favorites",
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
+        centerTitle: true,
       ),
       body: Obx(() {
         if (favController.favouriteNotes.isEmpty) {
@@ -37,7 +29,13 @@ class FavoriteScreen extends StatelessWidget {
             final not = favController.favouriteNotes[index];
             return Card(
               child: ListTile(
-                leading: CircleAvatar(child: Text((index + 1).toString())),
+                leading: CircleAvatar(
+                  backgroundColor: Colors.purple,
+                  child: Text(
+                    (index + 1).toString(),
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
                 title: Text(not.title),
                 subtitle: Text(not.Content),
                 trailing: IconButton(

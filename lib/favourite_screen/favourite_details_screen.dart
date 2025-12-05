@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:personal_notes/note_model.dart';
+import 'package:share_plus/share_plus.dart';
 
 class FavouriteDetailsScreen extends StatelessWidget {
   FavouriteDetailsScreen(this.note);
   final NoteModel note;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +16,7 @@ class FavouriteDetailsScreen extends StatelessWidget {
           onTap: Get.back,
           child: Icon(Icons.arrow_back, color: Colors.white),
         ),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.purple,
         title: Text(
           "Favourite note details",
           style: TextStyle(
@@ -23,6 +25,25 @@ class FavouriteDetailsScreen extends StatelessWidget {
             color: Colors.white,
           ),
         ),
+        centerTitle: true,
+        actions: [
+          SizedBox(width: 15),
+          InkWell(
+            onTap: () async {
+              await Clipboard.setData(ClipboardData(text: note.Content));
+              Fluttertoast.showToast(msg: "Copied to clipboard");
+            },
+            child: Icon(Icons.copy, color: Colors.white),
+          ),
+          SizedBox(width: 15),
+          InkWell(
+            onTap: () {
+              Share.share(note.Content, subject: note.title);
+            },
+            child: Icon(Icons.share, color: Colors.white),
+          ),
+          SizedBox(width: 20),
+        ],
       ),
       body: Container(
         padding: EdgeInsets.all(20),

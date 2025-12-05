@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:personal_notes/bottom_nav_bar_screen.dart';
-import 'package:personal_notes/favourite_screen/favorite_screen.dart';
 import 'package:personal_notes/note_model.dart';
 import 'package:share_plus/share_plus.dart';
-
 import 'favourite_screen/favourite_controller.dart';
 
 class NoteDetailsScreen extends StatelessWidget {
@@ -23,10 +20,8 @@ class NoteDetailsScreen extends StatelessWidget {
           child: Icon(Icons.arrow_back, color: Colors.white),
         ),
         backgroundColor: Colors.purple,
-        title: Text(
-          "Note Details",
-          style: TextStyle(color: Colors.indigoAccent),
-        ),
+        title: Text("Note Details", style: TextStyle(color: Colors.white)),
+        centerTitle: true,
         actions: [
           Obx(() {
             final isFav = favController.isFavourite(note);
@@ -44,7 +39,6 @@ class NoteDetailsScreen extends StatelessWidget {
               },
             );
           }),
-
           SizedBox(width: 15),
           InkWell(
             onTap: () async {
@@ -60,6 +54,7 @@ class NoteDetailsScreen extends StatelessWidget {
             },
             child: Icon(Icons.share, color: Colors.white),
           ),
+          SizedBox(width: 20),
         ],
       ),
       body: Container(
