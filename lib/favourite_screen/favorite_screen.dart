@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:personal_notes/favourite_screen/favourite_controller.dart';
 import 'package:personal_notes/favourite_screen/favourite_details_screen.dart';
-import 'package:personal_notes/note_model.dart';
 
 class FavoriteScreen extends StatelessWidget {
   FavoriteScreen({super.key});
 
   final FavouriteController favController = Get.find<FavouriteController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

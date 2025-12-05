@@ -22,16 +22,15 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   final NoteController noteController = Get.find<NoteController>();
 
   int _currentIndex = 0;
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   if(
-  //   Get.arguments!= null
-  //   ){
-  //     _currentIndex=Get.arguments;
-  //   }
-  // }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    titleClt.dispose();
+    noteController.dispose();
+    cntentClt.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

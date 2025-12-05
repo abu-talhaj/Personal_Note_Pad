@@ -7,12 +7,28 @@ import 'package:personal_notes/note_controller.dart';
 import 'package:personal_notes/note_details_screen.dart';
 import 'package:personal_notes/note_model.dart';
 
-class NoteScreen extends StatelessWidget {
+class NoteScreen extends StatefulWidget {
   NoteScreen({super.key});
 
+  @override
+  State<NoteScreen> createState() => _NoteScreenState();
+}
+
+class _NoteScreenState extends State<NoteScreen> {
   final NoteController noteController = Get.find<NoteController>();
+
   final TextEditingController titleClt = TextEditingController();
+
   final TextEditingController cntentClt = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    noteController.dispose();
+    titleClt.dispose();
+    cntentClt.dispose();
+  }
 
   final Box<NoteModel> box = Hive.box<NoteModel>("notes");
 
