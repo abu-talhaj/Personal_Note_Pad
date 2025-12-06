@@ -20,7 +20,10 @@ class NoteDetailsScreen extends StatelessWidget {
           child: Icon(Icons.arrow_back, color: Colors.white),
         ),
         backgroundColor: Colors.purple,
-        title: Text("Note Details", style: TextStyle(color: Colors.white)),
+        title: Text(
+          "Note Details",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
         actions: [
           Obx(() {
@@ -72,6 +75,7 @@ class NoteDetailsScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Divider(color: Colors.purple),
             SizedBox(height: 10.0),
             Text(
               note.Content,

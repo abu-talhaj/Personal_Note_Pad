@@ -133,6 +133,7 @@ class _NoteScreenState extends State<NoteScreen> {
                   TextField(
                     controller: titleClt,
                     style: TextStyle(color: Colors.white),
+                    maxLength: 20,
                     decoration: InputDecoration(
                       hintText: 'Title name',
                       hintStyle: TextStyle(color: Colors.white),
@@ -188,8 +189,8 @@ class _NoteScreenState extends State<NoteScreen> {
                             Content: cntentClt.text,
                           );
                           noteController.UpdateNote(index, note);
-                          titleClt.clear();
-                          cntentClt.clear();
+                          // titleClt.clear();
+                          // cntentClt.clear();
                           Navigator.pop(context);
                         }
                       },

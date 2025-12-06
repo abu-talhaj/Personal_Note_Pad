@@ -18,7 +18,7 @@ class FavouriteDetailsScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.purple,
         title: Text(
-          "Favourite note details",
+          "Note Details",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 24.0,
@@ -50,14 +50,17 @@ class FavouriteDetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              note.title,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+            Center(
+              child: Text(
+                note.title,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
             ),
+            Divider(color: Colors.purple),
             SizedBox(height: 10.0),
             Text(
               note.Content,

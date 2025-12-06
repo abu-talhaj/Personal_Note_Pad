@@ -81,7 +81,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                     style: TextStyle(color: Colors.white),
                     maxLength: 20,
                     decoration: InputDecoration(
-                      hintText: 'Your Title Text',
+                      hintText: 'Title name',
                       hintStyle: TextStyle(color: Colors.white),
                     ),
                   ),
@@ -89,7 +89,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                     controller: cntentClt,
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
-                      hintText: 'Enter your description Text ',
+                      hintText: 'Description',
                       hintStyle: TextStyle(color: Colors.white),
                     ),
                   ),
