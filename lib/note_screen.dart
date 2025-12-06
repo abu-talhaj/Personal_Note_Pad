@@ -25,7 +25,6 @@ class _NoteScreenState extends State<NoteScreen> {
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    noteController.dispose();
     titleClt.dispose();
     cntentClt.dispose();
   }
@@ -161,6 +160,9 @@ class _NoteScreenState extends State<NoteScreen> {
                       style: TextButton.styleFrom(
                         backgroundColor: Colors.redAccent,
                         foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                     ),
                     TextButton(
@@ -168,6 +170,9 @@ class _NoteScreenState extends State<NoteScreen> {
                       style: TextButton.styleFrom(
                         backgroundColor: Colors.pinkAccent,
                         foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                       onPressed: () {
                         if (titleClt.text.isNotEmpty &&

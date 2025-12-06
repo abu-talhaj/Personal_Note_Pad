@@ -28,7 +28,6 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
     // TODO: implement dispose
     super.dispose();
     titleClt.dispose();
-    noteController.dispose();
     cntentClt.dispose();
   }
 
@@ -80,6 +79,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                   TextField(
                     controller: titleClt,
                     style: TextStyle(color: Colors.white),
+                    maxLength: 20,
                     decoration: InputDecoration(
                       hintText: 'Your Title Text',
                       hintStyle: TextStyle(color: Colors.white),
@@ -107,6 +107,9 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                       style: TextButton.styleFrom(
                         backgroundColor: Colors.redAccent,
                         foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                     ),
                     TextButton(
@@ -114,6 +117,9 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                       style: TextButton.styleFrom(
                         backgroundColor: Colors.pinkAccent,
                         foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                       onPressed: () {
                         if (titleClt.text.isNotEmpty &&

@@ -36,8 +36,12 @@ class FavoriteScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                title: Text(not.title),
-                subtitle: Text(not.Content),
+                title: Text(not.title, maxLines: 1),
+                subtitle: Text(
+                  not.Content,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
                 trailing: IconButton(
                   onPressed: () {
                     favController.toggleFavourite(not);
