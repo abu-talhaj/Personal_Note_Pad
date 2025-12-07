@@ -49,7 +49,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
           });
         },
 
-        selectedItemColor: Colors.brown,
+        selectedItemColor: Colors.purple,
         unselectedItemColor: Colors.grey,
         currentIndex: _currentIndex,
         items: [

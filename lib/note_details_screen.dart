@@ -65,6 +65,7 @@ class NoteDetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Divider(color: Colors.purple),
             Center(
               child: Text(
                 note.title,
@@ -86,6 +87,7 @@ class NoteDetailsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10.0),
+            Divider(color: Colors.grey),
             Text(
               note.date,
               style: TextStyle(
@@ -94,6 +96,7 @@ class NoteDetailsScreen extends StatelessWidget {
                 color: Colors.purpleAccent,
               ),
             ),
+            Divider(color: Colors.grey),
           ],
         ),
       ),
