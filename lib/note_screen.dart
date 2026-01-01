@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -60,7 +61,7 @@ class _NoteScreenState extends State<NoteScreen> {
                       itemCount: box.keys.length,
                       separatorBuilder: (context, index) {
                         return Divider(
-                          color: Colors.brown[50],
+                          color: Colors.brown[100],
                           indent: 20,
                           endIndent: 20,
                         );
@@ -98,10 +99,13 @@ class _NoteScreenState extends State<NoteScreen> {
                                 InkWell(
                                   onTap: () {
                                     noteController.DeleteNote(index);
+                                    Fluttertoast.showToast(
+                                      msg: "Delete note successful",
+                                    );
                                   },
                                   child: Icon(
                                     Icons.delete,
-                                    color: Colors.redAccent,
+                                    color: Colors.brown,
                                   ),
                                 ),
                               ],

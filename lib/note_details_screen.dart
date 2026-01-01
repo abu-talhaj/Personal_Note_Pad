@@ -65,28 +65,28 @@ class NoteDetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Divider(color: Colors.purple),
+            Divider(color: Colors.purple, thickness: 2),
             Center(
               child: Text(
                 note.title,
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 19,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: Colors.purple,
                 ),
               ),
             ),
-            Divider(color: Colors.purple),
-            SizedBox(height: 10.0),
+            Divider(color: Colors.purple, thickness: 2),
+            SizedBox(height: 15.0),
             Text(
               note.Content,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
-                color: Colors.black54,
+                color: Colors.brown,
               ),
             ),
-            SizedBox(height: 10.0),
+            SizedBox(height: 100.0),
             Divider(color: Colors.grey),
             Text(
               note.date,
